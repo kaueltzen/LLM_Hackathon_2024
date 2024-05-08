@@ -13,10 +13,10 @@ These textual descriptions of 1264 structures were then transformed into LLM pro
 defining 
 - **an Instruction**
   - 'What is the frequency of the highest frequency optical phonon mode peak in 
-  - units of 1/cm given the following description?'
+  units of 1/cm given the following description?'
 - **an Input**
   - LobsterPy + Robocrys description of structure
-- **an Output**
+- **a Response**
   - 'The frequency of the highest frequency optical phonon mode peak is 350.5858 1/cm.'
 
 

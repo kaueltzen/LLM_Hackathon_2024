@@ -20,7 +20,33 @@ defining
   - 'The frequency of the highest frequency optical phonon mode peak is 350.5858 1/cm.'
 
 
-We finetuned a Llama 3 model (one train/test/val split: 0.64/0.2/0.16) and trained it for 10 epochs
+We finetuned a Llama 3 model using [un_sloth](https://github.com/unslothai/unsloth?tab=readme-ov-file) (one train/test/val split: 0.64/0.2/0.16) and trained it for 10 epochs
 with a validation step after each epoch. The textual output was converted back into
 numerical frequency values for computation of MAEs and RMSEs.
-The best epoch yields a test MAE of 37 1/cm.
+The best epoch yields a test MAE of 37 1/cm. This performance is comparable to other models of
+the [MatBench test suite](https://matbench.materialsproject.org/Leaderboards%20Per-Task/matbench_v0.1_matbench_phonons/).
+
+
+--------------------
+#### Project structure
+The folder *Data_generation* contains code and data to create the LLM instructions, inputs and responses.
+Please note that only the Robocrys text data is generated from scratch there, the raw LobsterPy data and targets
+can be found [elsewhere](https://doi.org/10.1038/s41597-023-02477-5).
+
+The folder *Models* contains utilities and scripts to finetune a Llama 3 model for materials property prediction 
+and evaluate the output.
+
+The environment used for data generation can be build from *requirements_robocrys.txt*.
+The environment used for LLM finetuning can be build from *environment_llm.yml* 
+(we followed the [un_sloth installation instructions](https://github.com/unslothai/unsloth?tab=readme-ov-file) here).
+
+--------------------
+
+#### Our team
+
+We are both PhD students in the group of [Janine George](https://jageo.github.io/).
+You can find us on GitHub ([Aakash](https://github.com/naik-aakash), [Katharina](https://github.com/kaueltzen)) and 
+LinkedIn ([Aakash](https://www.linkedin.com/in/aakashnaik23/), [Katharina](https://www.linkedin.com/in/katharina-ueltzen)).
+
+
+

@@ -26,8 +26,11 @@ def get_prediction_all_info(dataset: list, model, tokenizer) -> (list, list):
             y_pred.append(float(num))
             if abs(float(num)) > 20000.0:
                 print("VERY HIGH ERROR!: ", entry)
-        except TypeError:
-            y_pred.append(None)
+        except (TypeError, ValueError):
+            print("Faulty response, append 0!")
+            print(entry)
+            print(output)
+            y_pred.append(0.0)
     return y_true, y_pred
 
 

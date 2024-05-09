@@ -1,7 +1,7 @@
 # LLM_Hackathon_2024
 This repo contains code and data of our contribution to the 2024 LLM Hackathon, materials' property prediction from textual descriptions of structures and their bonding properties.
 
-![image](Presenting/llm_for_lastphdospeak_prediction-1.png)
+![image](assets/llm_for_lastphdospeak_prediction.png)
 
 We generated textual descriptions of the 1264 structures of the [MatBench phonon dataset](https://matbench.materialsproject.org/Leaderboards%20Per-Task/matbench_v0.1_matbench_phonons/).
 These descriptions were generated both with [Robocrystallographer](https://hackingmaterials.lbl.gov/robocrystallographer/index.html),
@@ -20,12 +20,20 @@ defining
   - 'The frequency of the highest frequency optical phonon mode peak is 350.5858 1/cm.'
 
 
-We finetuned a Llama 3 model using [un_sloth](https://github.com/unslothai/unsloth?tab=readme-ov-file) (one train/test/val split: 0.64/0.2/0.16) and trained it for 10 epochs
+We finetuned a Llama 3 model using [unsloth](https://github.com/unslothai/unsloth?tab=readme-ov-file) (one train/test/val split: 0.64/0.2/0.16) and trained it for 10 epochs
 with a validation step after each epoch. The textual output was converted back into
 numerical frequency values for computation of MAEs and RMSEs.
 The best epoch yields a test MAE of 37 1/cm. This performance is comparable to other models of
 the [MatBench test suite](https://matbench.materialsproject.org/Leaderboards%20Per-Task/matbench_v0.1_matbench_phonons/).
 
+Finetuning is performed using a NVIDIA A100 80GB gpu.
+
+## Todos and Outlook
+
+- Further test models performance using different tokenizers trained on material science text
+- Test model accuracy using LLM specific metrics
+- Systematically evaluate interpretability (feature importance)
+- Tweak textual descriptions to contain more information
 
 --------------------
 #### Project structure
@@ -39,6 +47,9 @@ and evaluate the output.
 The environment used for data generation can be build from *requirements_robocrys.txt*.
 The environment used for LLM finetuning can be build from *environment_llm.yml* 
 (we followed the [un_sloth installation instructions](https://github.com/unslothai/unsloth?tab=readme-ov-file) here).
+
+The folder *ChatBot* contains the scripts to load the locally saved gguf model file in [Ollama](https://github.com/ollama/ollama) via `Modelfile.` 
+Once this is done, just run the streamlit app using `streamlit run LLAMA_chatbot.py`
 
 --------------------
 

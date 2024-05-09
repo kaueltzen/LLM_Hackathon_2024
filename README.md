@@ -20,7 +20,7 @@ defining
   - 'The frequency of the highest frequency optical phonon mode peak is 350.5858 1/cm.'
 
 
-We finetuned a Llama 3 model using [un_sloth](https://github.com/unslothai/unsloth?tab=readme-ov-file) (one train/test/val split: 0.64/0.2/0.16) and trained it for 10 epochs
+We finetuned a Llama 3 model using [unsloth](https://github.com/unslothai/unsloth?tab=readme-ov-file) (one train/test/val split: 0.64/0.2/0.16) and trained it for 10 epochs
 with a validation step after each epoch. The textual output was converted back into
 numerical frequency values for computation of MAEs and RMSEs.
 The best epoch yields a test MAE of 37 1/cm. This performance is comparable to other models of

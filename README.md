@@ -50,6 +50,8 @@ frequency of the highest energy phonon DOS peak in LLMs:
 The best epoch using both Robocrys and LobsterPy text data yields a test MAE of 38 1/cm,
 while the best epoch of the model trained solely with Robocrys data yields a test MAE of 44 1/cm.
 
+![image2](assets/preliminary_results_pariy_plots_maes.png)
+
 Both performances are comparable to other models of
 the [MatBench test suite](https://matbench.materialsproject.org/Leaderboards%20Per-Task/matbench_v0.1_matbench_phonons/).
 

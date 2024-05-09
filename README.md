@@ -72,7 +72,7 @@ and evaluate the output.
 
 The environment used for data generation can be build from *requirements_robocrys.txt*.
 The environment used for LLM finetuning can be build from *environment_llm.yml* 
-(we followed the [un_sloth installation instructions](https://github.com/unslothai/unsloth?tab=readme-ov-file) here).
+(we followed the [unsloth installation instructions](https://github.com/unslothai/unsloth?tab=readme-ov-file) here).
 
 The folder *ChatBot* contains the scripts to load the locally saved gguf model file in [Ollama](https://github.com/ollama/ollama) via `Modelfile.` 
 Once this is done, just run the streamlit app using `streamlit run LLAMA_chatbot.py`
